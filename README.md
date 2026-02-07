@@ -7,6 +7,8 @@ Fiziksel bir hat sanatı sergisi için dijital rehber web uygulaması. Ziyaretç
 ![Prisma](https://img.shields.io/badge/Prisma-5.x-2D3748)
 ![License](https://img.shields.io/badge/License-MIT-green)
 
+[![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/new/template?template=https%3A%2F%2Fgithub.com%2FCelalTurkoglu%2FSanal-hat-sergisi&envs=ADMIN_USERNAME%2CADMIN_PASSWORD%2CSESSION_SECRET%2CNEXT_PUBLIC_APP_URL&optionalEnvs=R2_ENDPOINT%2CR2_ACCESS_KEY_ID%2CR2_SECRET_ACCESS_KEY%2CR2_BUCKET_NAME%2CR2_PUBLIC_URL)
+
 ## ✨ Özellikler
 
 - 🖼️ **Eser Galerisi** - Responsive masonry grid ile tüm eserleri görüntüleme
