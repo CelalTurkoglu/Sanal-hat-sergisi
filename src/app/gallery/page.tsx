@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+export const dynamic = 'force-dynamic';
 import { prisma } from "@/lib/prisma";
 import styles from "./page.module.css";
 

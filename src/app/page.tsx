@@ -1,8 +1,10 @@
 import Link from "next/link";
+
 import { getStats } from "@/lib/stats";
 import styles from "./page.module.css";
 
-export const revalidate = 60; // Revalidate every minute
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
 
 export default async function HomePage() {
   const stats = await getStats();
