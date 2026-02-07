@@ -7,7 +7,7 @@ Fiziksel bir hat sanatı sergisi için dijital rehber web uygulaması. Ziyaretç
 ![Prisma](https://img.shields.io/badge/Prisma-5.x-2D3748)
 ![License](https://img.shields.io/badge/License-MIT-green)
 
-## ✨ Özellikler
+## ✨ Özellikler. 
 
 - 🖼️ **Eser Galerisi** - Responsive masonry grid ile tüm eserleri görüntüleme
 - 📱 **QR Kod Desteği** - Her eser için QR kod oluşturma, indirme ve yazdırma
