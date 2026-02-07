@@ -17,7 +17,9 @@ export async function GET(request: NextRequest, { params }: RouteParams) {
         }
 
         const { id } = await params
-        const baseUrl = process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000'
+        const host = request.headers.get('host') || 'localhost:3000'
+        const protocol = request.headers.get('x-forwarded-proto') || 'http'
+        const baseUrl = process.env.NEXT_PUBLIC_APP_URL || `${protocol}://${host}`
         const artworkUrl = `${baseUrl}/artwork/${id}`
 
         // Generate QR code as data URL
