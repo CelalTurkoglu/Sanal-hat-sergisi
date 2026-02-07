@@ -18,7 +18,7 @@ export async function uploadToR2(
     fileName: string,
     contentType: string
 ): Promise<string> {
-    const key = `artworks/${Date.now()}-${fileName}`
+    const key = `artworks/${fileName}`
 
     await R2.send(
         new PutObjectCommand({
