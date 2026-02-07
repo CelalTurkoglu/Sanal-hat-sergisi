@@ -1,0 +1,29 @@
+// This is your Prisma schema file for PostgreSQL (Railway production)
+// To use this, copy this file to schema.prisma
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Artwork {
+  id          String   @id @default(cuid())
+  title       String
+  imageUrl    String
+  thumbnail   String?
+  arabicText  String
+  meaning     String
+  description String?
+  artist      String
+  order       Int      @default(0)
+  isPublished Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@index([order])
+  @@index([isPublished])
+}

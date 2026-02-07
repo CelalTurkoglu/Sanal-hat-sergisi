@@ -1,0 +1,29 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Artwork {
+  id          String   @id @default(cuid())
+  title       String                    // Örn: "Fatiha Suresi"
+  imageUrl    String                    // Yüksek kalite görsel URL
+  thumbnail   String?                   // Optimize edilmiş küçük resim  
+  arabicText  String                    // Arapça hat yazısı
+  meaning     String                    // Türkçe meali
+  description String?                   // Açıklama/tefsir
+  artist      String                    // Hattatın adı
+  order       Int      @default(0)      // Sıralama (galeri sırası için)
+  isPublished Boolean  @default(true)   // Yayın durumu
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@index([order])
+  @@index([isPublished])
+}

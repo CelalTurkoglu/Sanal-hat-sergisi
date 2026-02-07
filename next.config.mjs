@@ -1,4 +1,15 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
+const nextConfig = {
+    images: {
+        remotePatterns: [
+            {
+                protocol: 'https',
+                hostname: '**',
+            },
+        ],
+    },
+    // Output standalone for Railway deployment
+    output: 'standalone',
+}
 
-export default nextConfig;
+export default nextConfig
