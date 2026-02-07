@@ -1,8 +1,16 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import Image from 'next/image'
+import { toPng } from 'html-to-image'
 import styles from './QRModal.module.css'
+
+interface Artwork {
+    id: string
+    title: string
+    meaning: string
+    artist: string
+}
 
 interface QRModalProps {
     artworkId: string
@@ -12,18 +20,26 @@ interface QRModalProps {
 
 export default function QRModal({ artworkId, artworkTitle, onClose }: QRModalProps) {
     const [qrData, setQrData] = useState<{ qrCode: string; url: string } | null>(null)
+    const [artwork, setArtwork] = useState<Artwork | null>(null)
     const [loading, setLoading] = useState(true)
     const [error, setError] = useState('')
+    const cardRef = useRef<HTMLDivElement>(null)
 
-    // Fetch QR code on mount
+    // Fetch QR code and artwork details on mount
     useEffect(() => {
-        fetch(`/api/artworks/${artworkId}/qr`)
-            .then(res => res.json())
-            .then(data => {
-                if (data.error) {
-                    setError(data.error)
+        Promise.all([
+            fetch(`/api/artworks/${artworkId}/qr`).then(res => res.json()),
+            fetch(`/api/artworks/${artworkId}`).then(res => res.json())
+        ])
+            .then(([qrData, artworkData]) => {
+                if (qrData.error) {
+                    setError(qrData.error)
                 } else {
-                    setQrData(data)
+                    setQrData(qrData)
+                }
+
+                if (!artworkData.error) {
+                    setArtwork(artworkData)
                 }
             })
             .catch(err => {
@@ -40,6 +56,20 @@ export default function QRModal({ artworkId, artworkTitle, onClose }: QRModalPro
         link.href = qrData.qrCode
         link.download = `qr-${artworkTitle.replace(/\s+/g, '-').toLowerCase()}.png`
         link.click()
+    }
+
+    const handleDownloadCard = async () => {
+        if (cardRef.current === null) return
+
+        try {
+            const dataUrl = await toPng(cardRef.current, { cacheBust: true, pixelRatio: 2, backgroundColor: 'white' })
+            const link = document.createElement('a')
+            link.download = `kart-${artworkTitle.replace(/\s+/g, '-').toLowerCase()}.png`
+            link.href = dataUrl
+            link.click()
+        } catch (err) {
+            console.error('Kart oluşturulamadı:', err)
+        }
     }
 
     const handlePrint = () => {
@@ -81,6 +111,39 @@ export default function QRModal({ artworkId, artworkTitle, onClose }: QRModalPro
 
     return (
         <div className={styles.overlay} onClick={onClose}>
+            {/* Hidden card for generation */}
+            <div className={styles.cardWrapper}>
+                <div ref={cardRef} className={styles.infoCard}>
+                    {qrData && (
+                        <div className={styles.cardQr}>
+                            <Image
+                                src={qrData.qrCode}
+                                alt="QR Code"
+                                width={150}
+                                height={150}
+                                unoptimized
+                            />
+                        </div>
+                    )}
+                    <div className={styles.cardContent}>
+                        <div className={styles.cardRow}>
+                            <strong>Eser:</strong> {artwork?.title || artworkTitle}
+                        </div>
+                        {artwork?.meaning && (
+                            <div className={styles.cardRow}>
+                                <strong>Meâli:</strong> {artwork.meaning}
+                            </div>
+                        )}
+                        <div className={styles.cardRow}>
+                            <strong>Eser Sahibi:</strong> {artwork?.artist || 'Bilinmiyor'}
+                        </div>
+                        <div className={styles.cardRow}>
+                            <strong>Branş:</strong> Hüsn-i Hat
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <div className={styles.modal} onClick={e => e.stopPropagation()}>
                 <button className={styles.closeBtn} onClick={onClose}>×</button>
 
@@ -106,11 +169,11 @@ export default function QRModal({ artworkId, artworkTitle, onClose }: QRModalPro
                         <p className={styles.url}>{qrData.url}</p>
 
                         <div className={styles.actions}>
-                            <button className={styles.downloadBtn} onClick={handleDownload}>
-                                📥 İndir
+                            <button className={styles.downloadBtn} onClick={handleDownload} title="Sadece QR Kodu İndir">
+                                📥 QR İndir
                             </button>
-                            <button className={styles.printBtn} onClick={handlePrint}>
-                                🖨️ Yazdır
+                            <button className={styles.printBtn} onClick={handleDownloadCard} title="Bilgi Kartı Olarak İndir">
+                                🎫 Kart İndir
                             </button>
                         </div>
                     </>

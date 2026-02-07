@@ -153,3 +153,68 @@
     background: var(--bg-primary);
     border-color: var(--accent-gold);
 }
+
+.cardWrapper {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+}
+
+.infoCard {
+    background: white;
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    width: 600px;
+    border: 1px solid #e5e5e5;
+    font-family: 'Inter', sans-serif;
+}
+
+.cardQr {
+    flex-shrink: 0;
+    width: 150px;
+    height: 150px;
+    border: 1px solid #eee;
+}
+
+.cardContent {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.cardRow {
+    font-size: 16px;
+    line-height: 1.4;
+    color: #1a1a1a;
+}
+
+.cardRow strong {
+    font-weight: 600;
+    color: #4B5563;
+    margin-right: 6px;
+}
+
+.downloadCardBtn {
+    width: 100%;
+    margin-top: 12px;
+    padding: 12px;
+    background: white;
+    border: 1px solid #e5e5e5;
+    border-radius: 8px;
+    color: #374151;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.downloadCardBtn:hover {
+    background: #f9fafb;
+    border-color: #d1d5db;
+}
