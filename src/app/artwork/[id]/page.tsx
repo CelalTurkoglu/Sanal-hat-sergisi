@@ -40,7 +40,7 @@ export async function generateMetadata({ params }: PageProps) {
     }
 
     return {
-        title: `${artwork.title} | Hat Sanatı Sergisi`,
+        title: `${artwork.title} | Hüsn-ü Hat Sergisi`,
         description: artwork.meaning.substring(0, 160),
         openGraph: {
             title: artwork.title,
@@ -152,7 +152,7 @@ export default async function ArtworkPage({ params }: PageProps) {
             {/* Footer */}
             <footer className={styles.footer}>
                 <p className={styles.footerText}>
-                    © 2024 Celal Hat Sanatı Sergisi
+                    © 2025 Hüsn-ü Hat Sergisi | İstanbul İl Milli Eğitim Müdürlüğü
                 </p>
             </footer>
         </main>

@@ -30,7 +30,7 @@ export default function ArtworkForm({ artwork }: ArtworkFormProps) {
         arabicText: artwork?.arabicText || '',
         meaning: artwork?.meaning || '',
         description: artwork?.description || '',
-        artist: artwork?.artist || 'Celal',
+        artist: artwork?.artist || '',
         order: artwork?.order || 0,
         isPublished: artwork?.isPublished ?? true,
     })

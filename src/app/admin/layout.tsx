@@ -1,7 +1,7 @@
 import './admin.css'
 
 export const metadata = {
-    title: 'Admin Panel | Hat Sanatı Sergisi',
+    title: 'Admin Panel | Hüsn-ü Hat Sergisi',
 }
 
 export default async function AdminLayout({

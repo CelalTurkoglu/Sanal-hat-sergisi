@@ -19,14 +19,16 @@ export default async function HomePage() {
 
           {/* Main title */}
           <h1 className={styles.title}>
-            Hat Sanatı
+            Hüsn-ü Hat
             <span className={styles.titleAccent}>Sergisi</span>
           </h1>
 
           {/* Subtitle */}
           <p className={styles.subtitle}>
+            &ldquo;Rahmet Ayında Aile&rdquo;
+          </p>
+          <p className={styles.subtitleSmall}>
             Geleneksel hat sanatının ışığında, kadim harflerin
-            <br />
             modern dünyayla buluştuğu bir yolculuk
           </p>
 
@@ -37,8 +39,17 @@ export default async function HomePage() {
             <span className={styles.dividerLine}></span>
           </div>
 
-          {/* Artist name */}
-          <p className={styles.artistName}>Celal</p>
+          {/* Exhibition highlight */}
+          <div className={styles.heroInfo}>
+            <p className={styles.heroInfoItem}>
+              <span className={styles.heroInfoIcon}>📅</span>
+              <span>18 Şubat Çarşamba — Saat 11:00</span>
+            </p>
+            <p className={styles.heroInfoItem}>
+              <span className={styles.heroInfoIcon}>📍</span>
+              <span>İstanbul İl Milli Eğitim Müdürlüğü Sergi Salonu</span>
+            </p>
+          </div>
 
           {/* CTA Button */}
           <Link href="/gallery" className={styles.ctaButton}>
@@ -53,6 +64,46 @@ export default async function HomePage() {
         </div>
       </section>
 
+      {/* Exhibition Info Section */}
+      <section className={styles.exhibitionInfo}>
+        <div className="container">
+          <h2 className={styles.sectionTitle}>Sergi Bilgileri</h2>
+
+          <div className={styles.exhibitionSingle}>
+            <div className={styles.exhibitionCard}>
+              <h3 className={styles.exhibitionName}>&ldquo;Rahmet Ayında Aile&rdquo;</h3>
+              <p className={styles.exhibitionTheme}>Hüsn-ü Hat Sergisi</p>
+
+              <div className={styles.exhibitionHighlight}>
+                <div className={styles.highlightItem}>
+                  <span className={styles.highlightIcon}>📅</span>
+                  <div className={styles.highlightContent}>
+                    <span className={styles.highlightLabel}>Tarih</span>
+                    <span className={styles.highlightValue}>18 Şubat Çarşamba</span>
+                  </div>
+                </div>
+                <div className={styles.highlightDivider}></div>
+                <div className={styles.highlightItem}>
+                  <span className={styles.highlightIcon}>🕐</span>
+                  <div className={styles.highlightContent}>
+                    <span className={styles.highlightLabel}>Saat</span>
+                    <span className={styles.highlightValue}>11:00</span>
+                  </div>
+                </div>
+                <div className={styles.highlightDivider}></div>
+                <div className={styles.highlightItem}>
+                  <span className={styles.highlightIcon}>📍</span>
+                  <div className={styles.highlightContent}>
+                    <span className={styles.highlightLabel}>Yer</span>
+                    <span className={styles.highlightValue}>İstanbul İl Milli Eğitim Müdürlüğü Sergi Salonu</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* About Section */}
       <section className={styles.about}>
         <div className="container">
@@ -60,7 +111,8 @@ export default async function HomePage() {
 
           <div className={styles.aboutContent}>
             <p className={styles.aboutText}>
-              Bu sergi, yüzyıllardır süregelen hat sanatı geleneğinin özünü koruyarak,
+              İstanbul İl Milli Eğitim Müdürlüğü tarafından düzenlenen bu sergi,
+              yüzyıllardır süregelen hat sanatı geleneğinin özünü koruyarak,
               kutsal metinleri ve hikmetli sözleri çağdaş bir yorumla sunar. Her bir eser,
               mürekkebin kâğıtla buluştuğu o özel anı yakalamak için titizlikle hazırlanmıştır.
             </p>
@@ -97,7 +149,7 @@ export default async function HomePage() {
       {/* Footer */}
       <footer className={styles.footer}>
         <p className={styles.footerText}>
-          © 2024 Celal Hat Sanatı Sergisi
+          © 2025 Hüsn-ü Hat Sergisi | İstanbul İl Milli Eğitim Müdürlüğü
         </p>
       </footer>
     </main>

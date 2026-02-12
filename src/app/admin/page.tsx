@@ -57,7 +57,7 @@ export default async function AdminDashboard() {
             {/* Content */}
             <main className="admin-content">
                 <h1 className="admin-title">Hoş Geldiniz</h1>
-                <p className="admin-subtitle">Hat Sanatı Sergisi yönetim paneli</p>
+                <p className="admin-subtitle">Rahmet Ayında Aile — Hüsn-ü Hat Sergisi yönetim paneli</p>
 
                 {/* Stats */}
                 <div className="stats-grid">

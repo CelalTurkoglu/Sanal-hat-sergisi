@@ -13,8 +13,8 @@ async function getArtworks() {
 }
 
 export const metadata = {
-    title: "Galeri | Hat Sanatı Sergisi",
-    description: "Tüm eserleri keşfedin - 40 özgün hat sanatı eseri",
+    title: "Galeri | Hüsn-ü Hat Sergisi",
+    description: "Rahmet Ayında Aile — Hüsn-ü Hat Sergisi eserlerini keşfedin",
 };
 
 export default async function GalleryPage() {
@@ -26,7 +26,7 @@ export default async function GalleryPage() {
             <header className={styles.header}>
                 <nav className={styles.nav}>
                     <Link href="/" className={styles.logo}>
-                        Celal
+                        Hüsn-ü Hat Sergisi
                     </Link>
                 </nav>
             </header>
@@ -83,7 +83,7 @@ export default async function GalleryPage() {
             {/* Footer */}
             <footer className={styles.footer}>
                 <p className={styles.footerText}>
-                    © 2024 Celal Hat Sanatı Sergisi
+                    © 2025 Hüsn-ü Hat Sergisi | İstanbul İl Milli Eğitim Müdürlüğü
                 </p>
             </footer>
         </main>
