@@ -22,6 +22,7 @@ const notoNaskh = Noto_Naskh_Arabic({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'),
   title: "Rahmet Ayında Aile — Hüsn-ü Hat Sergisi",
   description: "\"Rahmet Ayında Aile\" Hüsn-ü Hat Sergisi. 18 Şubat Çarşamba, Saat 11:00 — İstanbul İl Milli Eğitim Müdürlüğü Sergi Salonu'nda eserleri keşfedin.",
   keywords: ["hüsn-ü hat", "hat sanatı", "kaligrafi", "İslami sanat", "sergi", "Rahmet Ayında Aile", "İstanbul", "İl Milli Eğitim Müdürlüğü"],
