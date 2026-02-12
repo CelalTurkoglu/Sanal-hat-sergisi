@@ -94,11 +94,6 @@ export default function QRModal({ artworkId, artworkTitle, onClose }: QRModalPro
                         <div className={styles.cardRow}>
                             <strong>Eser:</strong> {artwork?.title || artworkTitle}
                         </div>
-                        {artwork?.meaning && (
-                            <div className={styles.cardRow}>
-                                <strong>Meâli:</strong> {artwork.meaning}
-                            </div>
-                        )}
                         <div className={styles.cardRow}>
                             <strong>Eser Sahibi:</strong> {artwork?.artist || 'Bilinmiyor'}
                         </div>
@@ -106,6 +101,7 @@ export default function QRModal({ artworkId, artworkTitle, onClose }: QRModalPro
                             <strong>Branş:</strong> Hüsn-i Hat
                         </div>
                     </div>
+                    <p className={styles.cardPrompt}>Detaylı bilgi için QR kodu okutunuz</p>
                 </div>
             </div>
 
