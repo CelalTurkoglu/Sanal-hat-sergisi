@@ -405,18 +405,65 @@
 .aboutContent {
     max-width: 700px;
     margin: 0 auto;
+    text-align: left;
+}
+
+.aboutLead {
+    font-family: var(--font-heading);
+    font-size: var(--text-xl);
+    font-style: italic;
+    color: rgba(197, 165, 114, 0.9);
+    line-height: 1.8;
+    margin-bottom: var(--space-6);
     text-align: center;
 }
 
 .aboutText {
-    font-size: var(--text-lg);
+    font-size: var(--text-base);
     color: rgba(245, 241, 234, 0.65);
     line-height: 1.9;
     margin-bottom: var(--space-5);
+    text-indent: 1.5em;
 }
 
 .aboutText:last-child {
     margin-bottom: 0;
+}
+
+.aboutInvitation {
+    font-family: var(--font-heading);
+    font-size: var(--text-lg);
+    font-style: italic;
+    color: var(--accent-gold-light);
+    text-align: center;
+    margin-top: var(--space-6);
+    margin-bottom: 0;
+    line-height: 1.8;
+}
+
+.aboutSignature {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    margin-top: var(--space-8);
+    padding-top: var(--space-6);
+    border-top: 1px solid rgba(197, 165, 114, 0.15);
+}
+
+.signatureName {
+    font-family: var(--font-heading);
+    font-size: var(--text-lg);
+    font-weight: 500;
+    color: #F5F1EA;
+    letter-spacing: 0.04em;
+}
+
+.signatureRole {
+    font-size: var(--text-sm);
+    color: rgba(197, 165, 114, 0.7);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
 }
 
 .stats {

@@ -128,23 +128,39 @@ export default async function HomePage() {
           <h2 className={styles.sectionTitle}>Sergi Hakkında</h2>
 
           <div className={styles.aboutContent}>
-            <p className={styles.aboutText}>
-              İstanbul İl Milli Eğitim Müdürlüğü tarafından düzenlenen bu sergi,
-              yüzyıllardır süregelen hat sanatı geleneğinin özünü koruyarak,
-              kutsal metinleri ve hikmetli sözleri çağdaş bir yorumla sunar. Her bir eser,
-              mürekkebin kâğıtla buluştuğu o özel anı yakalamak için titizlikle hazırlanmıştır.
+            <p className={styles.aboutLead}>
+              Aile; merhametin, rahmetin ve medeniyet tasavvurunun başladığı ilk mekteptir.
             </p>
 
             <p className={styles.aboutText}>
-              {stats.totalArtworks > 0
-                ? `${stats.totalArtworks} eserin yer aldığı bu koleksiyon, Kur'an-ı Kerim ayetlerinden hadis-i şeriflere,
-                   hikmetli sözlerden dualara kadar geniş bir yelpazede, hat sanatının inceliklerini
-                   ve güzelliklerini gözler önüne serer.`
-                : `Koleksiyonumuzda Kur'an-ı Kerim ayetlerinden hadis-i şeriflere,
-                   hikmetli sözlerden dualara kadar geniş bir yelpazede, hat sanatının inceliklerini
-                   ve güzelliklerini gözler önüne seren eserler yer almaktadır.`
-              }
+              Okulumuz Güzelyurt Kız Anadolu İmam Hatip Lisesi öğrenci ve öğretmenleri tarafından
+              hattat Üstad Abdülkadir Geylani riyasetinde Ramazan ayının manevi iklimine hasretle
+              hazırlanan bu sergi, Kur&apos;an-ı Kerim&apos;de yer alan aile ile ilgili ayet-i kerimeleri
+              ve ailenin önemini ifade eden hadis-i şerifleri hüsn-ü hat sanatının zarif çizgileriyle
+              buluşturmayı amaçlamıştır.
             </p>
+
+            <p className={styles.aboutText}>
+              Kadim geleneğimizin estetik dili olan Hüsn-ü hat sanatı; sabrı, inceliği ve derinliği
+              temsil eder. Bu sergide yer alan her bir eser, sadece bir yazı değil; aynı zamanda
+              bir mesaj, bir değer, bir dua ve bir gönül niyazıdır.
+            </p>
+
+            <p className={styles.aboutText}>
+              &ldquo;Rahmet Ayında Aile&rdquo; temasıyla hazırlanan bu çalışma; aile bağlarının
+              güçlenmesine, birlik ve beraberliğin hatırlanmasına ve medeniyetimizin temel taşı
+              olan aile kavramının sanat yoluyla yeniden tefekkür edilmesine katkı sunmayı
+              hedeflemektedir.
+            </p>
+
+            <p className={styles.aboutInvitation}>
+              Harflerin zarafetinde saklı hikmeti keşfetmeye davetlisiniz.
+            </p>
+          </div>
+
+          <div className={styles.aboutSignature}>
+            <span className={styles.signatureName}>Gökçen GÜL KÜRTÜNLÜ</span>
+            <span className={styles.signatureRole}>Okul Müdürü</span>
           </div>
 
           <div className={styles.stats}>
