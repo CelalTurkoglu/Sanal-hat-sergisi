@@ -4,8 +4,10 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "prebuild": "if echo $DATABASE_URL | grep -q 'postgres'; then cp prisma/schema.postgresql.prisma prisma/schema.prisma && npx prisma generate; fi",
     "build": "next build",
     "start": "next start",
+    "postinstall": "npx prisma generate",
     "lint": "next lint"
   },
   "dependencies": {
