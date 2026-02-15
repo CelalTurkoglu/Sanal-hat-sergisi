@@ -72,10 +72,6 @@ export default async function HomePage() {
             </p>
           </div>
 
-          {/* CTA Button */}
-          <Link href="/gallery" className={styles.ctaButton}>
-            Eserleri Keşfet
-          </Link>
         </div>
 
         {/* Scroll indicator */}
@@ -85,48 +81,9 @@ export default async function HomePage() {
         </div>
       </section>
 
-      {/* Exhibition Info Section */}
-      <section className={styles.exhibitionInfo}>
-        <div className="container">
-          <h2 className={styles.sectionTitle}>Sergi Bilgileri</h2>
-
-          <div className={styles.exhibitionSingle}>
-            <div className={styles.exhibitionCard}>
-              <h3 className={styles.exhibitionName}>&ldquo;Rahmet Ayında Aile&rdquo;</h3>
-              <p className={styles.exhibitionTheme}>Hüsn-ü Hat Sergisi</p>
-
-              <div className={styles.exhibitionHighlight}>
-                <div className={styles.highlightItem}>
-                  <div className={styles.highlightContent}>
-                    <span className={styles.highlightLabel}>Tarih</span>
-                    <span className={styles.highlightValue}>18 Şubat Çarşamba</span>
-                  </div>
-                </div>
-                <div className={styles.highlightDivider}></div>
-                <div className={styles.highlightItem}>
-                  <div className={styles.highlightContent}>
-                    <span className={styles.highlightLabel}>Saat</span>
-                    <span className={styles.highlightValue}>11:00</span>
-                  </div>
-                </div>
-                <div className={styles.highlightDivider}></div>
-                <div className={styles.highlightItem}>
-                  <div className={styles.highlightContent}>
-                    <span className={styles.highlightLabel}>Yer</span>
-                    <span className={styles.highlightValue}>İstanbul İl Milli Eğitim Müdürlüğü Sergi Salonu</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* About Section */}
       <section className={styles.about}>
         <div className="container">
-          <h2 className={styles.sectionTitle}>Sergi Hakkında</h2>
-
           <div className={styles.aboutContent}>
             <p className={styles.aboutLead}>
               Aile; merhametin, rahmetin ve medeniyet tasavvurunun başladığı ilk mekteptir.
@@ -163,6 +120,12 @@ export default async function HomePage() {
             <span className={styles.signatureRole}>Okul Müdürü</span>
           </div>
 
+          <div className={styles.aboutCta}>
+            <Link href="/gallery" className={styles.ctaButton}>
+              Eserleri Keşfet
+            </Link>
+          </div>
+
           <div className={styles.stats}>
             <div className={styles.statItem}>
               <span className={styles.statNumber}>{stats.totalArtworks || '—'}</span>
@@ -170,11 +133,48 @@ export default async function HomePage() {
             </div>
             <div className={styles.statItem}>
               <span className={styles.statNumber}>{stats.totalArtists || '—'}</span>
-              <span className={styles.statLabel}>Hattat</span>
+              <span className={styles.statLabel}>Hat Öğrencisi</span>
             </div>
             <div className={styles.statItem}>
               <span className={styles.statNumber}>∞</span>
               <span className={styles.statLabel}>İlham</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Exhibition Info Section */}
+      <section className={styles.exhibitionInfo}>
+        <div className="container">
+          <h2 className={styles.sectionTitle}>Sergi Bilgileri</h2>
+
+          <div className={styles.exhibitionSingle}>
+            <div className={styles.exhibitionCard}>
+              <h3 className={styles.exhibitionName}>&ldquo;Rahmet Ayında Aile&rdquo;</h3>
+              <p className={styles.exhibitionTheme}>Hüsn-ü Hat Sergisi</p>
+
+              <div className={styles.exhibitionHighlight}>
+                <div className={styles.highlightItem}>
+                  <div className={styles.highlightContent}>
+                    <span className={styles.highlightLabel}>Tarih</span>
+                    <span className={styles.highlightValue}>18 Şubat Çarşamba</span>
+                  </div>
+                </div>
+                <div className={styles.highlightDivider}></div>
+                <div className={styles.highlightItem}>
+                  <div className={styles.highlightContent}>
+                    <span className={styles.highlightLabel}>Saat</span>
+                    <span className={styles.highlightValue}>11:00</span>
+                  </div>
+                </div>
+                <div className={styles.highlightDivider}></div>
+                <div className={styles.highlightItem}>
+                  <div className={styles.highlightContent}>
+                    <span className={styles.highlightLabel}>Yer</span>
+                    <span className={styles.highlightValue}>İstanbul İl Milli Eğitim Müdürlüğü Sergi Salonu</span>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>

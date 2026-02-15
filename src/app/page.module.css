@@ -451,6 +451,12 @@
     border-top: 1px solid rgba(197, 165, 114, 0.15);
 }
 
+.aboutCta {
+    display: flex;
+    justify-content: center;
+    margin-top: var(--space-8);
+}
+
 .signatureName {
     font-family: var(--font-heading);
     font-size: var(--text-lg);
