@@ -63,8 +63,8 @@ export default async function GalleryPage() {
                                         />
                                     </div>
                                     <div className={styles.cardContent}>
-                                        <h3 className={styles.cardTitle}>{artwork.title}</h3>
                                         <p className={styles.cardArtist}>{artwork.artist}</p>
+                                        <h3 className={styles.cardTitle}>{artwork.title}</h3>
                                     </div>
                                 </Link>
                             ))}

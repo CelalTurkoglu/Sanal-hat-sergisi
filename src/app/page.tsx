@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 import { getStats } from "@/lib/stats";
 import styles from "./page.module.css";
@@ -11,6 +12,20 @@ export default async function HomePage() {
 
   return (
     <main className={styles.main}>
+      {/* Poster / Banner Section */}
+      <section className={styles.posterSection}>
+        <div className={styles.posterWrapper}>
+          <Image
+            src="/afis.jpeg"
+            alt="Rahmet Ayında Aile — Hüsn-ü Hat Sergisi Afişi"
+            width={800}
+            height={1100}
+            priority
+            className={styles.posterImage}
+          />
+        </div>
+      </section>
+
       {/* Hero Section */}
       <section className={styles.hero}>
         <div className={styles.heroContent}>
@@ -42,12 +57,18 @@ export default async function HomePage() {
           {/* Exhibition highlight */}
           <div className={styles.heroInfo}>
             <p className={styles.heroInfoItem}>
-              <span className={styles.heroInfoIcon}>📅</span>
-              <span>18 Şubat Çarşamba — Saat 11:00</span>
+              <span className={styles.heroInfoLabel}>Tarih</span>
+              <span className={styles.heroInfoValue}>18 Şubat Çarşamba</span>
             </p>
+            <div className={styles.heroInfoDivider}></div>
             <p className={styles.heroInfoItem}>
-              <span className={styles.heroInfoIcon}>📍</span>
-              <span>İstanbul İl Milli Eğitim Müdürlüğü Sergi Salonu</span>
+              <span className={styles.heroInfoLabel}>Saat</span>
+              <span className={styles.heroInfoValue}>11:00</span>
+            </p>
+            <div className={styles.heroInfoDivider}></div>
+            <p className={styles.heroInfoItem}>
+              <span className={styles.heroInfoLabel}>Yer</span>
+              <span className={styles.heroInfoValue}>İstanbul İl Milli Eğitim Müdürlüğü Sergi Salonu</span>
             </p>
           </div>
 
@@ -76,7 +97,6 @@ export default async function HomePage() {
 
               <div className={styles.exhibitionHighlight}>
                 <div className={styles.highlightItem}>
-                  <span className={styles.highlightIcon}>📅</span>
                   <div className={styles.highlightContent}>
                     <span className={styles.highlightLabel}>Tarih</span>
                     <span className={styles.highlightValue}>18 Şubat Çarşamba</span>
@@ -84,7 +104,6 @@ export default async function HomePage() {
                 </div>
                 <div className={styles.highlightDivider}></div>
                 <div className={styles.highlightItem}>
-                  <span className={styles.highlightIcon}>🕐</span>
                   <div className={styles.highlightContent}>
                     <span className={styles.highlightLabel}>Saat</span>
                     <span className={styles.highlightValue}>11:00</span>
@@ -92,7 +111,6 @@ export default async function HomePage() {
                 </div>
                 <div className={styles.highlightDivider}></div>
                 <div className={styles.highlightItem}>
-                  <span className={styles.highlightIcon}>📍</span>
                   <div className={styles.highlightContent}>
                     <span className={styles.highlightLabel}>Yer</span>
                     <span className={styles.highlightValue}>İstanbul İl Milli Eğitim Müdürlüğü Sergi Salonu</span>
