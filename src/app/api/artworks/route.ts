@@ -60,6 +60,7 @@ export async function POST(request: NextRequest) {
                 meaning: data.meaning,
                 description: data.description || null,
                 artist: data.artist,
+                classGrade: data.classGrade || null,
                 order: data.order ? parseInt(data.order, 10) : nextOrder,
                 isPublished: data.isPublished ?? true,
             },

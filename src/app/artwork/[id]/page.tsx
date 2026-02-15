@@ -118,8 +118,16 @@ export default async function ArtworkPage({ params }: PageProps) {
 
                     {/* Artist */}
                     <div className={styles.artistSection}>
-                        <span className={styles.artistLabel}>Hattat</span>
-                        <span className={styles.artistName}>{artwork.artist}</span>
+                        <div className={styles.artistInfo}>
+                            <span className={styles.artistLabel}>Hattat</span>
+                            <span className={styles.artistName}>{artwork.artist}</span>
+                        </div>
+                        {artwork.classGrade && (
+                            <div className={styles.artistInfo}>
+                                <span className={styles.artistLabel}>Sınıf / Branş</span>
+                                <span className={styles.artistName}>{artwork.classGrade}</span>
+                            </div>
+                        )}
                     </div>
 
                     {/* Navigation */}

@@ -16,6 +16,7 @@ interface ArtworkFormProps {
         meaning: string
         description: string | null
         artist: string
+        classGrade: string | null
         order: number
         isPublished: boolean
     }
@@ -31,6 +32,7 @@ export default function ArtworkForm({ artwork }: ArtworkFormProps) {
         meaning: artwork?.meaning || '',
         description: artwork?.description || '',
         artist: artwork?.artist || '',
+        classGrade: artwork?.classGrade || '',
         order: artwork?.order || 0,
         isPublished: artwork?.isPublished ?? true,
     })
@@ -261,6 +263,19 @@ export default function ArtworkForm({ artwork }: ArtworkFormProps) {
                         onChange={handleChange}
                         className={styles.input}
                         required
+                    />
+                </div>
+
+                <div className={styles.field}>
+                    <label htmlFor="classGrade" className={styles.label}>Sınıf / Branş</label>
+                    <input
+                        type="text"
+                        id="classGrade"
+                        name="classGrade"
+                        value={formData.classGrade}
+                        onChange={handleChange}
+                        className={styles.input}
+                        placeholder="Örn: 7. Sınıf veya Görsel Sanatlar Öğretmeni"
                     />
                 </div>
 

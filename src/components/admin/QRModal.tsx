@@ -10,6 +10,7 @@ interface Artwork {
     title: string
     meaning: string
     artist: string
+    classGrade: string | null
 }
 
 interface QRModalProps {
@@ -97,9 +98,11 @@ export default function QRModal({ artworkId, artworkTitle, onClose }: QRModalPro
                         <div className={styles.cardRow}>
                             <strong>Eser Sahibi:</strong> {artwork?.artist || 'Bilinmiyor'}
                         </div>
-                        <div className={styles.cardRow}>
-                            <strong>Branş:</strong> Hüsn-i Hat
-                        </div>
+                        {artwork?.classGrade && (
+                            <div className={styles.cardRow}>
+                                <strong>Sınıf / Branş:</strong> {artwork.classGrade}
+                            </div>
+                        )}
                     </div>
                     <p className={styles.cardPrompt}>Detaylı bilgi için QR kodu okutunuz</p>
                 </div>

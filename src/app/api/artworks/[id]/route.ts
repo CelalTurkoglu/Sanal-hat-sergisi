@@ -73,6 +73,7 @@ export async function PUT(request: NextRequest, { params }: RouteParams) {
                 meaning: data.meaning,
                 description: data.description,
                 artist: data.artist,
+                classGrade: data.classGrade || null,
                 order: data.order ? parseInt(data.order, 10) : undefined,
                 isPublished: data.isPublished,
             },
