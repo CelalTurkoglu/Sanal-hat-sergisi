@@ -9,6 +9,7 @@ interface Artwork {
     id: string
     title: string
     meaning: string
+    arabicText: string
     artist: string
     classGrade: string | null
 }
@@ -85,26 +86,43 @@ export default function QRModal({ artworkId, artworkTitle, onClose }: QRModalPro
                             <Image
                                 src={qrData.qrCode}
                                 alt="QR Code"
-                                width={150}
-                                height={150}
+                                width={200}
+                                height={200}
                                 unoptimized
                             />
                         </div>
                     )}
                     <div className={styles.cardContent}>
                         <div className={styles.cardRow}>
-                            <strong>Eser:</strong> {artwork?.title || artworkTitle}
-                        </div>
-                        <div className={styles.cardRow}>
-                            <strong>Eser Sahibi:</strong> {artwork?.artist || 'Bilinmiyor'}
+                            <span className={styles.cardLabel}>Eser Sahibi</span>
+                            <span className={styles.cardValue}>{artwork?.artist || 'Bilinmiyor'}</span>
                         </div>
                         {artwork?.classGrade && (
                             <div className={styles.cardRow}>
-                                <strong>Sınıf / Branş:</strong> {artwork.classGrade}
+                                <span className={styles.cardLabel}>Sınıf / Branş</span>
+                                <span className={styles.cardValue}>{artwork.classGrade}</span>
+                            </div>
+                        )}
+                        <div className={styles.cardRow}>
+                            <span className={styles.cardLabel}>Eser</span>
+                            <span className={styles.cardValue}>{artwork?.title || artworkTitle}</span>
+                        </div>
+                        {artwork?.meaning && (
+                            <div className={styles.cardRow}>
+                                <span className={styles.cardLabel}>Meal</span>
+                                <span className={styles.cardValue}>{artwork.meaning}</span>
+                            </div>
+                        )}
+                        {artwork?.arabicText && (
+                            <div className={styles.cardRowArabic}>
+                                <span className={styles.cardArabicText}>{artwork.arabicText}</span>
                             </div>
                         )}
                     </div>
-                    <p className={styles.cardPrompt}>Detaylı bilgi için QR kodu okutunuz</p>
+                    <div className={styles.cardFooter}>
+                        <div className={styles.cardFooterLine}></div>
+                        <p className={styles.cardPrompt}>Detaylı bilgi için QR kodu okutunuz</p>
+                    </div>
                 </div>
             </div>
 
