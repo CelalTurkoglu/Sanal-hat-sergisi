@@ -1,0 +1,72 @@
+/* ========================================
+   Artwork Slider — Infinite Scroll Carousel
+   ======================================== */
+.sliderWrapper {
+    width: 100%;
+    overflow: hidden;
+    margin-top: var(--space-8);
+    padding: var(--space-2) 0;
+}
+
+.sliderTrack {
+    display: flex;
+    gap: var(--space-3);
+    width: max-content;
+    animation: scroll 30s linear infinite;
+}
+
+.sliderTrack:hover {
+    animation-play-state: paused;
+}
+
+.sliderItem {
+    flex-shrink: 0;
+    width: 160px;
+    aspect-ratio: 3 / 4;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    border: 1px solid var(--divider);
+    background: var(--bg-primary);
+    transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.sliderItem:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.sliderImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* ========================================
+   Responsive
+   ======================================== */
+@media (max-width: 768px) {
+    .sliderItem {
+        width: 120px;
+    }
+
+    .sliderTrack {
+        gap: var(--space-2);
+    }
+}
+
+@media (max-width: 480px) {
+    .sliderItem {
+        width: 100px;
+    }
+}

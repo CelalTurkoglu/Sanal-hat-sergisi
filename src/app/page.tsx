@@ -1,14 +1,23 @@
 import Link from "next/link";
 import Image from "next/image";
 
+import { prisma } from "@/lib/prisma";
 import { getStats } from "@/lib/stats";
+import ArtworkSlider from "@/components/public/ArtworkSlider";
 import styles from "./page.module.css";
 
 export const dynamic = 'force-dynamic';
 export const revalidate = 0;
 
 export default async function HomePage() {
-  const stats = await getStats();
+  const [stats, sliderArtworks] = await Promise.all([
+    getStats(),
+    prisma.artwork.findMany({
+      where: { isPublished: true },
+      orderBy: { order: 'asc' },
+      select: { id: true, thumbnail: true, imageUrl: true },
+    }),
+  ]);
 
   return (
     <main className={styles.main}>
@@ -29,9 +38,6 @@ export default async function HomePage() {
       {/* Hero Section */}
       <section className={styles.hero}>
         <div className={styles.heroContent}>
-          {/* Decorative element */}
-          <div className={styles.decorativeTop}>✦</div>
-
           {/* Main title */}
           <h1 className={styles.title}>
             Hüsn-ü Hat
@@ -73,18 +79,12 @@ export default async function HomePage() {
           </div>
 
         </div>
-
-        {/* Scroll indicator */}
-        <div className={styles.scrollIndicator}>
-          <span className={styles.scrollText}>Aşağı Kaydır</span>
-          <span className={styles.scrollArrow}>↓</span>
-        </div>
       </section>
 
       {/* About Section */}
       <section className={styles.about}>
         <div className="container">
-          <h2 className={styles.sectionTitle}>Sergi Hakkında</h2>
+          <div className={styles.sectionDecor}>✦</div>
           <div className={styles.aboutContent}>
             <p className={styles.aboutLead}>
               Aile; merhametin, rahmetin ve medeniyet tasavvurunun başladığı ilk mekteptir.
@@ -119,12 +119,6 @@ export default async function HomePage() {
             <span className={styles.signatureRole}>Okul Müdürü</span>
           </div>
 
-          <div className={styles.aboutCta}>
-            <Link href="/gallery" className={styles.ctaButton}>
-              Eserleri Keşfet
-            </Link>
-          </div>
-
           <div className={styles.stats}>
             <div className={styles.statItem}>
               <span className={styles.statNumber}>{stats.totalArtworks || '—'}</span>
@@ -138,6 +132,14 @@ export default async function HomePage() {
               <span className={styles.statNumber}>∞</span>
               <span className={styles.statLabel}>İlham</span>
             </div>
+          </div>
+
+          <ArtworkSlider artworks={sliderArtworks} />
+
+          <div className={styles.aboutCta}>
+            <Link href="/gallery" className={styles.ctaButton}>
+              Eserleri Keşfet
+            </Link>
           </div>
         </div>
       </section>
