@@ -84,17 +84,16 @@ export default async function HomePage() {
       {/* About Section */}
       <section className={styles.about}>
         <div className="container">
+          <h2 className={styles.sectionTitle}>Sergi Hakkında</h2>
           <div className={styles.aboutContent}>
             <p className={styles.aboutLead}>
               Aile; merhametin, rahmetin ve medeniyet tasavvurunun başladığı ilk mekteptir.
             </p>
 
             <p className={styles.aboutText}>
-              Okulumuz Güzelyurt Kız Anadolu İmam Hatip Lisesi öğrenci ve öğretmenleri tarafından
-              hattat Üstad Abdülkadir Geylani riyasetinde Ramazan ayının manevi iklimine hasretle
-              hazırlanan bu sergi, Kur&apos;an-ı Kerim&apos;de yer alan aile ile ilgili ayet-i kerimeleri
-              ve ailenin önemini ifade eden hadis-i şerifleri hüsn-ü hat sanatının zarif çizgileriyle
-              buluşturmayı amaçlamıştır.
+              Ramazan ayının manevi ikliminde hazırlanan bu sergi, Kur&apos;an-ı Kerim&apos;de yer alan
+              aile ile ilgili ayet-i kerimeleri ve ailenin önemini ifade eden hadis-i şerifleri
+              hüsn-ü hat sanatının zarif çizgileriyle buluşturmayı amaçlamıştır.
             </p>
 
             <p className={styles.aboutText}>
@@ -143,39 +142,38 @@ export default async function HomePage() {
         </div>
       </section>
 
-      {/* Exhibition Info Section */}
-      <section className={styles.exhibitionInfo}>
+      {/* Teacher Bio Section */}
+      <section className={styles.teacherBio}>
         <div className="container">
-          <h2 className={styles.sectionTitle}>Sergi Bilgileri</h2>
+          <h2 className={styles.sectionTitle}>Hattat Hakkında</h2>
 
-          <div className={styles.exhibitionSingle}>
-            <div className={styles.exhibitionCard}>
-              <h3 className={styles.exhibitionName}>&ldquo;Rahmet Ayında Aile&rdquo;</h3>
-              <p className={styles.exhibitionTheme}>Hüsn-ü Hat Sergisi</p>
+          <div className={styles.teacherCard}>
+            <h3 className={styles.teacherName}>Abdülkader bin Ali El-Cevlanî</h3>
+            <p className={styles.teacherTitle}>Hat Sanatı Üstadı</p>
+            <div className={styles.teacherDivider}></div>
 
-              <div className={styles.exhibitionHighlight}>
-                <div className={styles.highlightItem}>
-                  <div className={styles.highlightContent}>
-                    <span className={styles.highlightLabel}>Tarih</span>
-                    <span className={styles.highlightValue}>18 Şubat Çarşamba</span>
-                  </div>
-                </div>
-                <div className={styles.highlightDivider}></div>
-                <div className={styles.highlightItem}>
-                  <div className={styles.highlightContent}>
-                    <span className={styles.highlightLabel}>Saat</span>
-                    <span className={styles.highlightValue}>11:00</span>
-                  </div>
-                </div>
-                <div className={styles.highlightDivider}></div>
-                <div className={styles.highlightItem}>
-                  <div className={styles.highlightContent}>
-                    <span className={styles.highlightLabel}>Yer</span>
-                    <span className={styles.highlightValue}>İstanbul İl Milli Eğitim Müdürlüğü Sergi Salonu</span>
-                  </div>
-                </div>
-              </div>
+            <div className={styles.teacherDetail}>
+              <span className={styles.teacherDetailLabel}>Doğum Yılı:</span>
+              <span className={styles.teacherDetailValue}>1966</span>
             </div>
+
+            <p className={styles.teacherText}>
+              Şam&apos;da eğitim gördü ve tüm eğitim seviyelerini tamamladı.
+              1989 yılında dört yıllık eğitimden sonra Güzel Sanatlar Enstitüsü&apos;nden mezun oldu.
+            </p>
+
+            <p className={styles.teacherText}>
+              35 yıl boyunca Şam&apos;daki ortaokullarda ve Güzel Sanatlar Enstitüsü ve Güzel Sanatlar
+              Fakültesi&apos;nde hat sanatı ve İslami süsleme sanatı dersleri verdi. Şam, Almanya,
+              Suudi Arabistan ve diğer Arap şehir ve ülkelerinde çeşitli sergiler açtı.
+            </p>
+
+            <p className={styles.teacherText}>
+              10 yıldır Türkiye&apos;de yaşıyor. İstanbul&apos;da da farklı tarihlerde Halk Eğitim
+              Merkezlerinde ve farklı okullarda hat sanatı öğretmeni olarak çalıştı ve çeşitli
+              sergiler açtı. Halen İstanbul Esenyurt Güzelyurt KAİHL&apos;nin öğretmen ve
+              öğrencilerine hüsn-ü hat dersi vermektedir.
+            </p>
           </div>
         </div>
       </section>
