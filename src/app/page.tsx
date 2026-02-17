@@ -86,18 +86,24 @@ export default async function HomePage() {
         <div className="container">
           <div className={styles.sectionDecor}>✦</div>
           <div className={styles.aboutContent}>
+            <h3 className={styles.aboutHeading}>
+              &ldquo;Rahmet Ayında Aile Hüsn-ü Hat Sergisi&rdquo;
+            </h3>
+
             <p className={styles.aboutLead}>
               Aile; merhametin, rahmetin ve medeniyet tasavvurunun başladığı ilk mekteptir.
             </p>
 
             <p className={styles.aboutText}>
-              Ramazan ayının manevi ikliminde hazırlanan bu sergi, Kur&apos;an-ı Kerim&apos;de yer alan
-              aile ile ilgili ayet-i kerimeleri ve ailenin önemini ifade eden hadis-i şerifleri
-              hüsn-ü hat sanatının zarif çizgileriyle buluşturmayı amaçlamıştır.
+              Okulumuz Güzelyurt Kız Anadolu İmam Hatip Lisesi öğrenci ve öğretmenleri tarafından
+              hattat Üstad Abdülkadir Geylani riyasetinde Ramazan ayının manevi iklimine hasretle
+              hazırlanan bu sergi, Kur&apos;an-ı Kerim&apos;de yer alan aile ile ilgili ayet-i kerimeleri
+              ve ailenin önemini ifade eden hadis-i şerifleri hüsn-ü hat sanatının zarif çizgileriyle
+              buluşturmayı amaçlamıştır.
             </p>
 
             <p className={styles.aboutText}>
-              Kadim geleneğimizin estetik dili olan Hüsn-ü hat sanatı; sabrı, inceliği ve derinliği
+              Kadim geleneğimizin estetik dili olan Hüsnü-ü hat sanatı; sabrı, inceliği ve derinliği
               temsil eder. Bu sergide yer alan her bir eser, sadece bir yazı değil; aynı zamanda
               bir mesaj, bir değer, bir dua ve bir gönül niyazıdır.
             </p>
