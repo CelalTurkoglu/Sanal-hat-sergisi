@@ -64,12 +64,7 @@ export default async function HomePage() {
           <div className={styles.heroInfo}>
             <p className={styles.heroInfoItem}>
               <span className={styles.heroInfoLabel}>Tarih</span>
-              <span className={styles.heroInfoValue}>18 Şubat Çarşamba</span>
-            </p>
-            <div className={styles.heroInfoDivider}></div>
-            <p className={styles.heroInfoItem}>
-              <span className={styles.heroInfoLabel}>Saat</span>
-              <span className={styles.heroInfoValue}>11:00</span>
+              <span className={styles.heroInfoValue}>18 Şubat - 9 Mart 2026</span>
             </p>
             <div className={styles.heroInfoDivider}></div>
             <p className={styles.heroInfoItem}>
